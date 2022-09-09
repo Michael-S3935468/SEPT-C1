@@ -12,14 +12,26 @@ class Item
     public Item(int id, String title, String desc, String imagePath, float price)
     {
         this.id = id;
-        this.title = title;
-        this.desc = desc;
-        this.imagePath = imagePath;
-        this.price = price;
+        this.setTitle(title);
+        this.setDesc(desc);
+        this.setImagePath(imagePath);
+        this.setPrice(price);
     }
 
+    // Update from an existing item
+    public void update(Item other)
+    {
+        // Items are keyed by ID, so we should never change ID.
+        assert(this.id == other.id);
+
+        this.setTitle(other.getTitle());
+        this.setDesc(other.getDesc());
+        this.setImagePath(other.getImagePath());
+        this.setPrice(other.getPrice());
+    }
+
+    // Getters/setters
     // id
-    public void setId(int id) { this.id = id; }
     public int getId() { return this.id; }
 
     // title
