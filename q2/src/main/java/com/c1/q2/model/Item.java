@@ -1,6 +1,6 @@
 package com.c1.q2.model;
 
-class Item
+public class Item
 {
     protected int id;
     protected String title;
